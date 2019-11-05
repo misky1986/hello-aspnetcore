@@ -8,12 +8,11 @@ trigger:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '5ce927d5-753f-40b5-9538-a4d92e4063ec'
-  imageRepository: 'helloaspnetcore'
+  dockerRegistryServiceConnection: 'c59ccb0c-174c-4878-9453-51c7e3b64651'
+  imageRepository: 'hello-aspnetcore'
   containerRegistry: 'misky01.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildNumber)'
-  imagePullSecret: 'misky012985ec61-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -48,7 +47,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'misky1986helloaspnetcore-7106.default'
+    environment: 'misky1986helloaspnetcore-7106.misky01'
     strategy:
       runOnce:
         deploy:
